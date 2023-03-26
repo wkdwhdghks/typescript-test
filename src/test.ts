@@ -1,15 +1,13 @@
-let 철수쌤: { subject: string } = { subject: "math" };
-let 영희쌤: { subject: string[] } = { subject: ["science", "english"] };
-let 민수쌤: { subject: string[] } = { subject: ["science", "art", "korean"] };
-
-function fc(x: { subject: string | string[] }): string {
-  if (typeof x.subject === "string") {
-    return x.subject;
-  } else if (Array.isArray(x.subject)) {
-    return x.subject[x.subject.length - 1];
-  }
-
-  return "";
+interface A {
+  plus: (a: number, b: number) => number;
+  minus: (a: number, b: number) => number;
 }
 
-fc(철수쌤);
+let a: A = {
+  plus(a, b) {
+    return a + b;
+  },
+  minus(a, b) {
+    return a - b;
+  },
+};
