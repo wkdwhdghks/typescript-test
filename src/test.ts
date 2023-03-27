@@ -1,13 +1,11 @@
-interface A {
-  plus: (a: number, b: number) => number;
-  minus: (a: number, b: number) => number;
-}
-
-let a: A = {
-  plus(a, b) {
-    return a + b;
-  },
-  minus(a, b) {
-    return a - b;
-  },
+type Bus = {
+  color: string;
+  model: boolean;
+  price: number;
 };
+
+type TypeChangert<T> = {
+  [key in keyof T]: string | number;
+};
+
+type s = TypeChangert<Bus>;
